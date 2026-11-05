@@ -1,0 +1,71 @@
+# curated hit MVs (2024-2025) and channel feeds; see category entries for sources
+# XIAO Mood Controller - category definitions
+# API mode (YOUTUBE_API_KEY set): queries rotate on refresh; order/published_after_days
+#   bias toward recent famous hits. favorite_channels add newest uploads.
+# Keyless mode: official RSS feeds of favorite_channels (newest uploads) plus
+#   the curated fallback list. No third-party scraping.
+categories:
+  - id: jpop
+    label: J-POP
+    queries: ["J-POP 人気曲 最新 2025", "邦楽 ヒット曲 2025 MV", "J-POP 最新ヒット 有名アーティスト"]
+    favorite_channels: [UCvpredjG93ifbCP1Y77JyFA, UCUCeZaZeJbEYAAzvMgrKOPQ, UCUmyoDMTN6Chx4nnpdhYiuw]   # YOASOBI, 米津玄師, Mrs. GREEN APPLE
+    order: viewCount
+    published_after_days: 500
+    fallback:
+      - "LmZD-TU96q4|米津玄師 - IRIS OUT|Kenshi Yonezu 米津玄師"
+      - "L262NKlSl4s|Mrs. GREEN APPLE「ダーリン」Official MV|Mrs. GREEN APPLE"
+      - "a8dgNdJVluc|サカナクション / 怪獣 -MV-|sakanaction"
+      - "M-Eyhjkepy0|米津玄師 - BOW AND ARROW|Kenshi Yonezu 米津玄師"
+      - "keOnleW2eak|Official髭男dism - らしさ [Official Video]|Official髭男dism"
+      - "A7cp6OVa0Qc|Official髭男dism - Same Blue [Official Video]|Official髭男dism"
+      - "Jy-QS27q7lA|Mrs. GREEN APPLE「ケセラセラ」Official MV|Mrs. GREEN APPLE"
+      - "mLW35YMzELE|Creepy Nuts｢Bling-Bang-Bang-Born｣|Creepy Nuts"
+      - "ZRtdQ81jPUQ|YOASOBI「アイドル」Official MV|YOASOBI"
+      - "-wb2PAx6aEs|米津玄師 - さよーならまたいつか！|米津玄師"
+  - id: gaming
+    label: ゲーム実況
+    queries: ["ゲーム実況 人気 2025", "布団ちゃん ゲーム 面白い", "ゲーム実況 名作 長時間"]
+    favorite_channels: [UCfTfI2-PkGYgcQHoVk85tCA]   # 布団ちゃん切り抜きMAX
+    fallback:
+      - "umUGAb0wUyw|【PUBG】新ゾンビモードをやる布団ちゃん|布団ちゃん切り抜きMAX"
+      - "UlR1Zy45otw|【餓狼伝説】大将スコアに挑む布団ちゃん【2026/11/4】|布団ちゃん切り抜きMAX"
+      - "WiRCcnO4O_0|【餓狼伝説】クリロナ等を使って爆笑する布団ちゃん|布団ちゃん切り抜きMAX"
+      - "1RmIlMZ2gVU|【モンハンXX】睡眠爆殺ブシドー片手剣の限界に挑戦する布団ちゃん|布団ちゃん切り抜きMAX"
+  - id: talk
+    label: 雑談
+    queries: ["加藤純一 雑談 切り抜き", "うんこちゃん 雑談 放送", "ゲーム実況者 雑談 有名"]
+    favorite_channels: [UCnJiHT6AfD-mUV_OeP0d7Rw, UCx1nAvtVDIsaGmCMSe8ofsQ]
+    fallback:
+      - "munuLSW5Eg8|うんこちゃん『朝』【2011/01/18】|うんこちゃん昔の録画保管庫"
+  - id: radio
+    label: ラジオ
+    queries: ["霜降り明星 オールナイトニッポン", "オールナイトニッポン アーカイブ 深夜放送", "霜降り明星 ANN 面白い回"]
+    favorite_channels: [UCWFy6Hh1whUKx-xOyV7L0FA]   # ラジオ243 (霜降り明星のオールナイトニッポン アーカイブ)
+    fallback:
+      - "fkjYGNniHmk|霜降り明星ANN 2026/02/27|霜降りANN"
+      - "gpBhYKg1aoU|霜降り明星ANN 2021/06/18|霜降りANN"
+  - id: lofi
+    label: Lo-fi
+    queries: ["lofi hip hop radio beats to relax", "coffee talk lofi chill", "study beats mix"]
+    favorite_channels: []
+    fallback:
+      - "Z-vy9Jpj4q0|Coffee Talk - Music & Ambience - 1 Hour|Toge Productions"
+      - "jYsjzFOrZpM|Relax Coffee Chill ☕ Beats to Work/Study|unclear"
+      - "oudBv0amrz0|cold evening, warm drink (Coffee Talk OST)|Toge Productions"
+      - "jfKfPfyJRdk|lofi hip hop radio (LIVE)|Lofi Girl"
+      - "5pGzH7ifqUY|24/7 Lofi Radio with Tokyo Rain|homegrown"
+      - "-5CTcU7mNfY|24/7 lofi beats radio ☕|HomelessGuy"
+  - id: ambience
+    label: 環境音
+    queries: ["雨音 作業用 BGM 2025", "自然音 長時間 リラックス", "焚き火 音 睡眠"]
+    favorite_channels: []
+    fallback:
+      - "4UULAPwjwI8|きれいな雨の音 2時間|癒しの音 吉直堂"
+      - "rA4n6lz2taU|フリーBGM「雨の日のチル」2時間|にゃるぱかBGM工房"
+      - "yCmSyMyAEPg|美しい雨の音 3時間|10 Hours Looptube"
+      - "ekXFslHOvZ8|10 Hours Rain & Thunder|Relaxing White Noise"
+
+cache:
+  min_candidates: 3      # refresh asynchronously when below this
+  max_candidates: 20     # per category
+  refresh_cooldown_sec: 600
